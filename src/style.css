@@ -77,8 +77,22 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
     min-height: 50px;
+    margin-top: 10px;
+    position: relative;
 }
 .comment .user-name{
     color: #00a3cf;
     margin-right: 10px;
+}
+.comment:hover .comment-delete {
+    color: #00a3cf;
+  }
+  
+.comment-delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: transparent;
+    font-size: 12px;
+    cursor: pointer;
 }

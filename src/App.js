@@ -11,17 +11,39 @@ class App extends React.Component {
       list: []
     }
   }
+  componentWillMount() {
+    this._loadComments();
+  }
 
   handleCommit(comment) {
-    console.log(comment);
+    let list = [...this.state.list, comment];
     this.setState({ list: [...this.state.list, comment] });
-    console.log(this.state.list);
+    this._saveComments(list);
   }
+
+  handleDelComment = (index) => {
+    let list = [...this.state.list];
+    list.splice(index, 1)
+    this.setState({ list });
+    this._saveComments(list);
+  }
+
+  _loadComments() {
+    let comments = localStorage.getItem('comments');
+    if (comments) {
+      let list = JSON.parse(comments);
+      this.setState({ list });
+    }
+  }
+  _saveComments(comments) {
+    localStorage.setItem('comments', JSON.stringify(comments));
+  }
+
   render() {
     return (
       <div className="wrapper" >
         <Input commit={this.handleCommit.bind(this)} />
-        <List list={this.state.list} />
+        <List list={this.state.list} onDelComment={this.handleDelComment} />
       </div>
     );
   }

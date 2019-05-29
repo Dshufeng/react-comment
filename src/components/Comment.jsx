@@ -5,7 +5,10 @@ class Comment extends React.Component {
         super(props);
         this.state = {};
     }
-
+    handleDeleteComment = () => {
+        let index = this.props.index;
+        this.props.onDelComment(index);
+    }
     render() {
         const { comment } = this.props;
         return (
@@ -14,6 +17,7 @@ class Comment extends React.Component {
                     <span>{comment.username}: </span>
                 </div>
                 <p>{comment.content}</p>
+                <span className="comment-delete" onClick={this.handleDeleteComment}>删除</span>
             </div>
         );
     }
