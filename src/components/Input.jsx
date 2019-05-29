@@ -5,7 +5,8 @@ class Input extends React.Component {
         super(props);
         this.state = {
             username: "",
-            content: ""
+            content: "",
+            create_time: ""
         }
     }
     componentDidMount() {
@@ -16,12 +17,14 @@ class Input extends React.Component {
     }
 
     handleCommitBtn = () => {
-        const { commit } = this.props;
+        const { onCommit } = this.props;
         let { username, content } = this.state;
+        let create_time = +new Date();
+
         if (username === '' || content === '') {
             return false;
         }
-        commit({ username, content });
+        onCommit({ username, content, create_time });
 
         content = "";
         this.setState({ content });

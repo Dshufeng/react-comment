@@ -42,7 +42,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="wrapper" >
-        <Input commit={this.handleCommit.bind(this)} />
+        <Input onCommit={this.handleCommit.bind(this)} />
         <List list={this.state.list} onDelComment={this.handleDelComment} />
       </div>
     );

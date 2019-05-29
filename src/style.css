@@ -87,7 +87,7 @@
 .comment:hover .comment-delete {
     color: #00a3cf;
   }
-  
+
 .comment-delete {
     position: absolute;
     right: 0;
@@ -96,3 +96,11 @@
     font-size: 12px;
     cursor: pointer;
 }
+.comment-createdtime {
+    padding-right: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+    font-size: 12px;
+  }
