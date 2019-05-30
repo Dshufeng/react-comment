@@ -4,7 +4,7 @@ class Input extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
+            username: props.username, // 从 props 上取 username 字段
             content: "",
             create_time: ""
         }
@@ -13,18 +13,18 @@ class Input extends React.Component {
         this.textarea.focus();
     }
     componentWillMount() {
-        this._loadUsername();
+        //this._loadUsername();
     }
 
     handleCommitBtn = () => {
-        const { onCommit } = this.props;
+        const { onSubmit } = this.props;
         let { username, content } = this.state;
         let create_time = +new Date();
 
         if (username === '' || content === '') {
             return false;
         }
-        onCommit({ username, content, create_time });
+        onSubmit({ username, content, create_time });
 
         content = "";
         this.setState({ content });
@@ -37,7 +37,8 @@ class Input extends React.Component {
     handleBlurInput = (e) => {
         let username = e.target.value;
         if (username) {
-            this._saveUsername(username);
+            // this._saveUsername(username);
+            this.props.onUserNameInputBlur(username);
         }
     }
     handleChangeText = (e) => {
@@ -60,7 +61,7 @@ class Input extends React.Component {
                 <div className="comment-field">
                     <span className="comment-field-name">用户名:</span>
                     <div className="comment-field-input">
-                        <input type="text" onChange={this.handleChangeInput} onBlur={this.handleBlurInput} value={this.state.username} />
+                        <input type="text" onChange={this.handleChangeInput} onBlur={this.handleBlurInput} value={this.state.username ? this.state.username : ''} />
                     </div>
                 </div>
                 <div className="comment-field">

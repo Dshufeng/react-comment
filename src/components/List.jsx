@@ -15,7 +15,12 @@ class List extends React.Component {
         return (
             <div>
                 {
-                    list.map((item, index) => <Comment comment={item} index={index} key={index} onDelComment={this.handleDelComment} />)
+                    list.map((item, index) => <Comment
+                        comment={item}
+                        index={index}
+                        key={index}
+                        onDelComment={this.handleDelComment}
+                    />)
                 }
             </div>
         )
