@@ -18,7 +18,6 @@ class ListContiner extends React.Component {
     _loadComments() {
         let comments = localStorage.getItem('comments');
         comments = comments ? JSON.parse(comments) : [];
-        console.log(comments);
         this.props.initComments(comments);
     }
 

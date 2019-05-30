@@ -61,13 +61,22 @@ class Input extends React.Component {
                 <div className="comment-field">
                     <span className="comment-field-name">用户名:</span>
                     <div className="comment-field-input">
-                        <input type="text" onChange={this.handleChangeInput} onBlur={this.handleBlurInput} value={this.state.username ? this.state.username : ''} />
+                        <input
+                            type="text"
+                            onChange={this.handleChangeInput}
+                            onBlur={this.handleBlurInput} value={this.state.username ? this.state.username : ''}
+                        />
                     </div>
                 </div>
                 <div className="comment-field">
                     <span className="comment-field-name">评论:</span>
                     <div className="comment-field-input">
-                        <textarea ref={(textarea) => this.textarea = textarea} cols="40" rows="10" onChange={this.handleChangeText} value={this.state.content}></textarea>
+                        <textarea
+                            ref={(textarea) => this.textarea = textarea}
+                            cols="40"
+                            rows="10"
+                            onChange={this.handleChangeText} value={this.state.content}
+                        ></textarea>
                     </div>
                 </div>
                 <div className="comment-field-button">
