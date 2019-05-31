@@ -28,15 +28,20 @@ class OfferContainer extends Component {
     }
     render() {
         return (
-            <Offer
-                tiger={this.props.tiger}
-                onIncrease={this.handleIncrease}
-                onDecrease={this.handleDecrease}
-            />
+            <div >
+                <div className="wrapper">
+                    <Offer
+                        tiger={this.props.tiger}
+                        onIncrease={this.handleIncrease}
+                        onDecrease={this.handleDecrease}
+                    />
+                </div>
+            </div>
         );
     }
 }
 const mapStateToProps = (state) => {
+    state = state.offerReducer;
     return {
         tiger: state.tiger
     };

@@ -3,7 +3,7 @@ const DEC = 'DEC';
 
 const tiger = 10000;
 
-export default function (state, action) {
+export function offerReducer(state, action) {
     if (!state) {
         state = { tiger }
     }

@@ -40,6 +40,7 @@ class ListContiner extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    state = state.commentReducer;
     return {
         comments: state.comments
     }

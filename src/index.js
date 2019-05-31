@@ -1,18 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import OfferApp from './containers/offer/Offer';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import offerReducer from './reducers/offer'
+import Reducers from './reducers/Reducer'
 
+import Offer from './containers/offer/Offer';
+import Comment from './containers/Comment';
 import './style.css';
 
-const store = createStore(offerReducer);
+const store = createStore(Reducers);
+console.log(store.getState())
+// const store = createStore(offerReducer);
 
 ReactDOM.render(
     <Provider store={store}>
-        <OfferApp />
+        <BrowserRouter>
+            <div>
+                <Link to='/'>to offer page</Link>
+                <Link to='/comment'>to comment page</Link>
+            </div>
+            <Switch>
+                <Route path='/' exact component={Offer}></Route>
+                <Route path='/comment' component={Comment}></Route>
+            </Switch>
+        </BrowserRouter>
     </Provider>,
     document.getElementById('root')
 );

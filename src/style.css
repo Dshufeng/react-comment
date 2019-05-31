@@ -2,6 +2,51 @@
     margin: 0;
     padding: 0;
 }
+.btn{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;          
+}
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.tiger-num{
+    width: 400px;
+    height: 50px;
+    margin: 5px;
+    font-size: 22px;
+}
+.tiger-btn{
+    margin: 5px;
+}
+.tiger-btn .btn{
+    margin-right: 5px;
+}
 .wrapper{
     width: 500px;
     margin: 10px auto;
@@ -103,14 +148,25 @@
     right: 0;
     padding: 5px;
     font-size: 12px;
-  }
-  .start span{
-      cursor: pointer;
-      font-size: 24px;
-  }
-  .start-active{
-      color: red;
-  }
-  .start-normal{
+}
+.start{
+    margin-bottom: 10px;
+}
+.start span{
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 5px;
+    -moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.start-active{
+    color: red;
+}
+.start-normal{
     color: #ccc;
 }

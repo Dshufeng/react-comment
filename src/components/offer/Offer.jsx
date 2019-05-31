@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class Offer extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
+            starts: [1, 2, 3, 4, 5, 6],
             start: 0,
             clickFlag: 0
         };
@@ -25,14 +27,10 @@ class Offer extends Component {
         const { tiger, onIncrease, onDecrease } = this.props;
         return (
             <div>
-                <div>{tiger}</div>
-                <div>
-                    <button onClick={onIncrease}>click up</button>
-                    <button onClick={onDecrease}>click down</button>
-                </div>
+                <div className="tiger-num">{tiger}</div>
                 <div className="start" onMouseLeave={this.handleStartMouseOut}>
                     {
-                        [1, 2, 3, 4, 5].map((start) => {
+                        this.state.starts.map((start) => {
                             const startClass = start > this.state.start ? 'normal' : 'active';
                             return (
                                 <span
@@ -44,6 +42,10 @@ class Offer extends Component {
                             )
                         })
                     }
+                </div>
+                <div className="tiger-btn">
+                    <button className="btn btn-default" onClick={onIncrease}>click up</button>
+                    <button className="btn btn-default" onClick={onDecrease}>click down</button>
                 </div>
             </div>
         );
