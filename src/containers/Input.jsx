@@ -52,6 +52,9 @@ class InputContainer extends Component {
         );
     }
 }
+
+// mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行，重新计算 UI 组件的参数，从而触发 UI 组件的重新渲染。
+// mapStateToProps的第一个参数总是state对象，还可以使用第二个参数，代表容器组件的props对象
 const mapStateToProps = (state) => {
     return { comments: state.comments }
 }

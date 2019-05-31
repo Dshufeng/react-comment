@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import OfferApp from './containers/offer/Offer';
+import CommentApp from './containers/CommentApp';
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import offerReducer from './reducers/offer'
+import commentsReducer from './reducers/comment'
 
 import './style.css';
 
-const store = createStore(offerReducer);
+const store = createStore(commentsReducer);
 
 ReactDOM.render(
     <Provider store={store}>
-        <OfferApp />
+        <CommentApp />
     </Provider>,
     document.getElementById('root')
 );
