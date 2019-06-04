@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Link, NavLink, HashRouter } from 'react-router-dom'
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -11,15 +11,18 @@ import Comment from './containers/Comment';
 import './style.css';
 
 const store = createStore(Reducers);
-console.log(store.getState())
+const activeStyle = {
+    fontWeight: 'bold',
+    color: '#ccc'
+};
 // const store = createStore(offerReducer);
 
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-            <div>
-                <Link to='/'>to offer page</Link>
-                <Link to='/comment'>to comment page</Link>
+            <div className="nav-body">
+                <NavLink to='/' className="nav" exact activeStyle={activeStyle}>to offer page</NavLink>
+                <NavLink to='/comment' className="nav" activeStyle={activeStyle}>to comment page</NavLink>
             </div>
             <Switch>
                 <Route path='/' exact component={Offer}></Route>

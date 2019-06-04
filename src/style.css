@@ -2,6 +2,23 @@
     margin: 0;
     padding: 0;
 }
+a{
+    text-decoration: none;
+    color: red;
+}
+a.nav{
+    flex:1;
+    background: #fff;
+    margin: 10px;
+}
+.nav-body{
+    display: flex;
+    width: 400px;
+    height: 50px;
+    background: #ccc;
+    margin: 0 auto;
+    text-align: center;
+}
 .btn{
     display: inline-block;
     padding: 6px 12px;
