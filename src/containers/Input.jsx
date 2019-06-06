@@ -4,6 +4,10 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Input from '../components/Input';
 import { addComment } from '../reducers/comment';
+import axios from 'axios';
+import qs from 'qs';
+
+const baseUrl = 'http://localhost:9090/';
 
 class InputContainer extends Component {
     static propTypes = {
@@ -38,6 +42,15 @@ class InputContainer extends Component {
 
         const { comments } = this.props;
         const newComments = [...comments, comment];
+        axios.post(baseUrl, qs.stringify({
+            list: 123
+        }), {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }).then(function (response) {
+                console.log(response);
+            });
         localStorage.setItem('comments', JSON.stringify(newComments));
         if (this.props.addComment) {
             this.props.addComment(comment);

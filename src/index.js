@@ -6,7 +6,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import Reducers from './reducers/Reducer'
 
-import Offer from './containers/offer/Offer';
+import Offer from './containers/Offer';
 import Comment from './containers/Comment';
 import './style.css';
 

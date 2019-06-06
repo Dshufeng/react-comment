@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Offer from '../../components/offer/Offer'
+import Offer from '../components/Offer'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
-import { increase, decrease } from '../../reducers/offer';
+import { increase, decrease } from '../reducers/offer';
 
 class OfferContainer extends Component {
     static propTypes = {
